@@ -18,8 +18,7 @@ export default function Layout({ children }: Props) {
         <Navigation />
       </nav>
       <main>{children}</main>
-      <style jsx>
-        {`
+      <style jsx>{`
           .root {
             display: block;
             padding: 4rem 0;

@@ -139,3 +139,20 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - label: "Headline"
+        name: "headline"
+        widget: "string"
+      - label: "Hero Image"
+        name: "hero_image"
+        widget: "image"
+

@@ -3,7 +3,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import { MdxRemote } from "next-mdx-remote/types";
 import hydrate from "next-mdx-remote/hydrate";
 import matter from "gray-matter";
-import { fetchPostContent } from "../../lib/posts";
+import { fetchPostContent } from "../../lib/pages";
 import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';

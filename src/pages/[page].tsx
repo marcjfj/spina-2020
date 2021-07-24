@@ -9,46 +9,9 @@ import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 
-export default () => (
-    <div>Balls</div>
+export default ({headline}) => (
+    <div>{headline}</div>
 );
-// export type Props = {
-//   title: string;
-//   dateString: string;
-//   slug: string;
-//   tags: string[];
-//   author: string;
-//   description?: string;
-//   source: MdxRemote.Source;
-// };
-
-// const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
-
-
-// export default function Post({
-//   title,
-//   dateString,
-//   slug,
-//   tags,
-//   author,
-//   description = "",
-//   source,
-// }: Props) {
-//   const content = hydrate(source, { components })
-//   return (
-//     <PostLayout
-//       title={title}
-//       date={parseISO(dateString)}
-//       slug={slug}
-//       tags={tags}
-//       author={author}
-//       description={description}
-//     >
-//       {content}
-//     </PostLayout>
-//   )
-// }
-
 
 const slugToPostContent = (postContents => {
   let hash = {}
@@ -73,13 +36,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
 
-  // const mdxSource = await renderToString(content, { scope: data });
+  const mdxSource = await renderToString(content, { scope: data });
   
   return {
     props: {
       headline: data.headline,
       hero_image: data.hero_image,
       slug: data.slug,
+      content: mdxSource
     },
   };
 };

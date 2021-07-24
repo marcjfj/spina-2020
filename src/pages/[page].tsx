@@ -13,6 +13,9 @@ import InstagramEmbed from "react-instagram-embed";
 import YouTube from "react-youtube";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 
+export default () => (
+    <div></div>
+);
 // export type Props = {
 //   title: string;
 //   dateString: string;

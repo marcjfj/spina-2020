@@ -23,11 +23,7 @@ export default () => (
 // };
 
 // const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
-const slugToPostContent = (postContents => {
-  let hash = {}
-  postContents.forEach(it => hash[it.slug] = it)
-  return hash;
-})(fetchPageContent());
+
 
 // export default function Post({
 //   title,
@@ -53,6 +49,13 @@ const slugToPostContent = (postContents => {
 //   )
 // }
 
+console.log(fetchPageContent());
+const slugToPostContent = (postContents => {
+  let hash = {}
+  postContents.forEach(it => hash[it.slug] = it)
+  return hash;
+})(fetchPageContent());
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = fetchPageContent().map(it => "/" + it.slug);
   return {
@@ -62,7 +65,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params.post as string;
+    console.log("params", params)
+  const slug = params.page as string;
+  console.log(slugToPostContent)
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
@@ -72,13 +77,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   
   return {
     props: {
-      title: data.title,
-      dateString: data.date,
+      headline: data.headline,
+      hero_image: data.hero_image,
       slug: data.slug,
-      description: "",
-      tags: data.tags,
-      author: data.author,
-      source: mdxSource
     },
   };
 };

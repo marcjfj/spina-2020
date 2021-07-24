@@ -14,9 +14,11 @@ export type PageContent = {
 let pageCache;
 
 export const fetchPageContent = () => {
+  console.log('yoooooo');
     if (pageCache) return pageCache;
 
     const fileNames = fs.readdirSync(pagesDirectory);
+    
 
     const allPagesData = fileNames.filter(name => name.endsWith(".mdx"))
       .map(fileName => {
@@ -27,13 +29,8 @@ export const fetchPageContent = () => {
                 yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
             },
         });
-        const matterData = matterResult.data as {
-            date: string;
-            title: string;
-            tags: string[];
-            slug: string;
-            fullPath: string,
-          };
+        const matterData = matterResult.data;
+        
         matterData.fullPath = fullPath;
         const slug = fileName.replace(/\.mdx$/, "");
         // Validate slug string
@@ -44,5 +41,7 @@ export const fetchPageContent = () => {
         }
         return matterData;
       })
+      // console.log(allPagesData);
+      return allPagesData;
 
 }

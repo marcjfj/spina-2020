@@ -10,7 +10,7 @@ import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 
 export default () => (
-    <div></div>
+    <div>Balls</div>
 );
 // export type Props = {
 //   title: string;

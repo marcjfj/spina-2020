@@ -49,7 +49,7 @@ export default () => (
 //   )
 // }
 
-console.log(fetchPageContent());
+
 const slugToPostContent = (postContents => {
   let hash = {}
   postContents.forEach(it => hash[it.slug] = it)
@@ -73,7 +73,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
 
-  const mdxSource = await renderToString(content, { scope: data });
+  // const mdxSource = await renderToString(content, { scope: data });
   
   return {
     props: {

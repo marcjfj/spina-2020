@@ -9,14 +9,16 @@ import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 
-export default ({headline, content}) => (
+const Page = ({headline, content}) => {
+  const parsedContent = hydrate(content, {})
+  return (
     <div>
       <h1>{headline}</h1>
       <div>
-        {content}
+        {parsedContent}
       </div>
     </div>
-);
+)};
 
 const slugToPostContent = (postContents => {
   let hash = {}
@@ -53,3 +55,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
+export default Page;

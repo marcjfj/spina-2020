@@ -159,6 +159,6 @@ collections:
         name: "hero_image"
         widget: "image"
       - label: "Content"
-        name: "content"
+        name: "body"
         widget: "markdown"
 

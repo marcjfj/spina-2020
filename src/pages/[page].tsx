@@ -9,13 +9,14 @@ import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 
-const Page = ({headline, content}) => {
-  const parsedContent = hydrate(content, {})
+const Page = ({headline, source}) => {
+  const content = hydrate(source)
+  console.log(source);
   return (
     <div>
       <h1>{headline}</h1>
       <div>
-        {parsedContent}
+        {content}
       </div>
     </div>
 )};
@@ -37,20 +38,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     console.log("params", params)
   const slug = params.page as string;
-  console.log(slugToPostContent)
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
 
+  console.log('wher are you content', content);
   const mdxSource = await renderToString(content, { scope: data });
-  
+  console.log('stringy, mdxSource');
   return {
     props: {
       headline: data.headline,
       hero_image: data.hero_image,
       slug: data.slug,
-      content: mdxSource
+      source: mdxSource
     },
   };
 };

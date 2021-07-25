@@ -10,6 +10,10 @@ import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 import Image from 'next/image'
 
+const myLoader = ({ src, width, quality }) => {
+  return `/${src}`
+}
+
 const Page = ({headline, source, hero_image}) => {
   const content = hydrate(source)
   console.log('img', hero_image);

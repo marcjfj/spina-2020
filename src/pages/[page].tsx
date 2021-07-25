@@ -9,8 +9,13 @@ import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 
-export default ({headline}) => (
-    <div>{headline}</div>
+export default ({headline, content}) => (
+    <div>
+      <h1>{headline}</h1>
+      <div>
+        {content}
+      </div>
+    </div>
 );
 
 const slugToPostContent = (postContents => {

@@ -8,15 +8,26 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
+import Image from 'next/image'
 
-const Page = ({headline, source}) => {
+const Page = ({headline, source, hero_image}) => {
   const content = hydrate(source)
-  console.log(source);
+  console.log('img', hero_image);
   return (
     <div>
-      <h1>{headline}</h1>
-      <div>
-        {content}
+      <div className="hero"> 
+      <Image 
+      className="heroImage" 
+      src={hero_image} 
+      layout={'fill'}
+      alt="Picture of the author" />
+      <div className="scrim"></div>
+      <h1 className="headline">{headline}</h1>
+      </div>
+      <div className="contentWrapper">
+        <div className="content">
+          {content}
+        </div>
       </div>
     </div>
 )};
@@ -36,16 +47,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    console.log("params", params)
+
   const slug = params.page as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
 
-  console.log('wher are you content', content);
+
   const mdxSource = await renderToString(content, { scope: data });
-  console.log('stringy, mdxSource');
+
   return {
     props: {
       headline: data.headline,

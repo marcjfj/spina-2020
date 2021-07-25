@@ -20,12 +20,7 @@ const Page = ({headline, source, hero_image}) => {
   return (
     <div>
       <div className="hero"> 
-      <Image 
-      loader={myLoader}
-      className="heroImage" 
-      src={hero_image} 
-      layout={'fill'}
-      alt="Picture of the author" />
+      <img className="heroImage" src={hero_image} />
       <div className="scrim"></div>
       <h1 className="headline">{headline}</h1>
       </div>

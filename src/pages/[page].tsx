@@ -21,6 +21,7 @@ const Page = ({headline, source, hero_image}) => {
     <div>
       <div className="hero"> 
       <Image 
+      loader={myLoader}
       className="heroImage" 
       src={hero_image} 
       layout={'fill'}

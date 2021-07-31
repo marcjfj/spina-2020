@@ -1,8 +1,8 @@
 backend:
-  name: github
-  repo: https://github.com/marcjfj/spina-2020
+  name: git-gateway
   branch: master
-  base_url: https://spina-2021.vercel.app
+  identity_url: 'https://inspiring-lovelace-3e5b25.netlify.app/.netlify/identity'
+  gateway_url: 'https://inspiring-lovelace-3e5b25.netlify.app/.netlify/git'
 media_folder: public/images
 public_folder: /images
 publish_mode: editorial_workflow

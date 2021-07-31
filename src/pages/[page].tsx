@@ -20,7 +20,8 @@ const Page = ({headline, source, hero_image}) => {
   return (
     <div>
       <div className="hero"> 
-      <img className="heroImage" src={hero_image} />
+      {/* <img className="heroImage" src={hero_image} /> */}
+      <Image src={hero_image} layout="fill" />
       <div className="scrim"></div>
       <h1 className="headline">{headline}</h1>
       </div>

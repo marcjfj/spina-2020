@@ -46,15 +46,10 @@ body {
     line-height: 1.75rem;
     margin: 0 auto;
 }
-
-.heroImage {
+.hero img {
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
+
 .scrim{
     position: absolute;
     top: 0;

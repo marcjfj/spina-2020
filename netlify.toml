@@ -1,4 +1,8 @@
 [build]
   publish = "dist"
   command = "npm run build"
-
+[[redirects]]
+  from = "/_next/image*"
+  query = { url = ":url", w = ":width", q = ":quality" }
+  to = "/.netlify/functions/image?url=:url&w=:width&q=:quality"
+  status = 200

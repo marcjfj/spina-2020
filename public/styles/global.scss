@@ -65,3 +65,29 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.404);
 }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    padding: 20px;
+    transition: 0.5s background;
+    &.scrolled {
+        background: $green;
+    }
+    
+    .logo {
+        margin-right: auto;
+        border: 0;
+    }
+    .contact-button {
+        appearance: none;
+        border: none;
+        color: $text;
+        background: $cream;
+        padding: 5px 20px;
+    }
+}

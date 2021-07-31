@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npm run export"
 [[redirects]]
   from = "/_next/image*"
   query = { url = ":url", w = ":width", q = ":quality" }

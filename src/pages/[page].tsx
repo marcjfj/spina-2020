@@ -11,7 +11,7 @@ import PostLayout from "../components/PostLayout";
 import Image from 'next/image'
 
 const myLoader = ({ src, width, quality }) => {
-  return `https://inspiring-lovelace-3e5b25.netlify.app/.netlify/functions/next_image${src}?w=${width}&q=${quality || 75}`
+  return `https://inspiring-lovelace-3e5b25.netlify.app/.netlify/functions/next_image?src=${src}&w=${width}&q=${quality || 75}`
 }
 
 const Page = ({headline, source, hero_image}) => {

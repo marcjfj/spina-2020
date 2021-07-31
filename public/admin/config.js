@@ -40,8 +40,8 @@ const config = {
               widget: "list",
               summary: "{{fields.keyword.keyword}}",
               field: {
-                label: Keyword,
-                name: keyword,
+                label: "Keyword",
+                name: "keyword",
                 widget: "string",
               },
             },

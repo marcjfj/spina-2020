@@ -10,6 +10,10 @@ import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 import Image from 'next/image'
 
+const myLoader = ({ src, width, quality }) => {
+  return `https://inspiring-lovelace-3e5b25.netlify.app/.netlify/functions/next_image${src}/${width}/${quality || 75}`
+}
+
 const Page = ({headline, source, hero_image}) => {
   const content = hydrate(source)
   console.log('img', hero_image);

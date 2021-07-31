@@ -62,11 +62,11 @@ const config = {
     {
       name: "pages",
       label: "Pages",
-      folder: "contet/pages/",
+      folder: "content/pages/",
       extension: "mdx",
-      format: "frontmater",
+      format: "frontmatter",
       create: true,
-      slug: "{{slu}}",
+      slug: "{{slug}}",
       identifier_field: "slug",
       summary: "{{headline}}",
       fields: [

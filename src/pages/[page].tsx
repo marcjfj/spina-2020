@@ -15,7 +15,8 @@ const myLoader = ({ src, width, quality }) => {
 }
 
 const Page = ({headline, source, hero_image}) => {
-  const content = hydrate(source)
+  console.log('source', source);
+  const content = source ? hydrate(source) : null;
   console.log('img', hero_image);
   return (
     <div>
@@ -45,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   console.log(paths);
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 

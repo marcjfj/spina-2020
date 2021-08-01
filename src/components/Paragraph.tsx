@@ -1,7 +1,6 @@
-export default function Paragraph({content}) {
-  return (
-    <section className="paragraph">
-      {content}
-    </section>
-  )
+import hydrate from "next-mdx-remote/hydrate";
+
+export default function Paragraph({ content }) {
+  const parsedContent = hydrate(content);
+  return <section className="paragraph">{parsedContent}</section>;
 }

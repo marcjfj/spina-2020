@@ -30,6 +30,7 @@ export default {
       types: [
         HeroBanner,
         Paragraph,
+        Downloads,
       ]
     }
   ],

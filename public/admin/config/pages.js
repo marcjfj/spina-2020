@@ -1,5 +1,6 @@
 import HeroBanner from './blocks/heroBanner.js';
 import Paragraph from './blocks/Paragraph.js';
+import Downloads from './blocks/Downloads.js';
 
 export default {
   name: "pages",

@@ -26,9 +26,7 @@ export default {
       name: "sections",
       widget: "list",
       types: [
-        {
-          heroBanner,
-        }
+        heroBanner,
       ]
     }
   ],

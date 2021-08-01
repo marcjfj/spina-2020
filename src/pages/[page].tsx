@@ -25,19 +25,15 @@ const renderSections = (sections) => {
   })
 }
 
-const Page = ({headline, source, hero_image}) => {
-  console.log('source', source);
-  const content = source ? hydrate(source) : null;
-  console.log('img', hero_image);
+const Page = ({slug, title, sections}) => {
+  // console.log('source', source);
+  // const content = hydrate(source);
   return (
     <div>
       <Header />
-      {renderSections}
-      <div className="contentWrapper">
-        <div className="content">
-          {content}
-        </div>
-      </div>
+      <main>
+        {() => renderSections(sections)}
+      </main>
     </div>
 )};
 

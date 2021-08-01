@@ -1,4 +1,4 @@
-import heroBanner from './blocks/heroBanner.js';
+import HeroBanner from './blocks/heroBanner.js';
 
 export default {
   name: "pages",
@@ -26,7 +26,7 @@ export default {
       name: "sections",
       widget: "list",
       types: [
-        heroBanner,
+        HeroBanner,
       ]
     }
   ],

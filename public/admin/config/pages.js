@@ -1,3 +1,5 @@
+import heroBanner from './blocks/heroBanner';
+
 export default {
   name: "pages",
   label: "Pages",
@@ -7,11 +9,16 @@ export default {
   create: true,
   slug: "{{slug}}",
   identifier_field: "slug",
-  summary: "{{headline}}",
+  summary: "{{title}}",
   fields: [
     {
       label: "Slug",
       name: "slug",
+      widget: "string",
+    },
+    {
+      label: "Title",
+      name: "title",
       widget: "string",
     },
     {
@@ -20,24 +27,7 @@ export default {
       widget: "list",
       types: [
         {
-          label: "Hero Banner",
-          name: "heroBanner",
-          widget: "object",
-          summary: "",
-          fields: [
-            {
-              label: "Headline",
-              name: "headline",
-              widget: "string",
-            },
-            {
-              label: "Image",
-              name: "image",
-              widget: "image",
-              allow_multiple: false,
-              hint: "Use JPG files only"
-            }
-          ]
+          heroBanner,
         }
       ]
     }

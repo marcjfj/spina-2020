@@ -18,12 +18,12 @@ const components = {
 };
 
 const Page = ({slug, title, sections}) => {
-  
+
   const renderSections = () => {
-    sections.map(section => {
+    return sections.map(section => {
       const Component = components[section.type];
       return (
-        <Component {...section} />
+        <Component {...section} key={slug}/>
       )
     })
   }
@@ -33,7 +33,7 @@ const Page = ({slug, title, sections}) => {
     <div>
       <Header />
       <main>
-        {renderSections}
+        {renderSections()}
       </main>
     </div>
 )};

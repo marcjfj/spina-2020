@@ -31,8 +31,6 @@ const Page = ({slug, title, sections}) => {
       )
     })
   }
-  // console.log('source', source);
-  // const content = hydrate(source);
   return (
     <div>
       <Header />

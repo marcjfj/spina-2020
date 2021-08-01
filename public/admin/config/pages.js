@@ -17,6 +17,7 @@ export default {
       label: "Slug",
       name: "slug",
       widget: "string",
+      required: false,
     },
     {
       label: "Title",

@@ -29,12 +29,15 @@ body {
 }
 
 .headline {
-    display: flex;
-    align-items: center;
+    text-align: center;
     position: relative;
     color: $cream;
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 2rem;
+    padding: 20px;
+    @media (min-width: 800px) {
+        font-size: 4rem;
+    }
 }
 
 .contentWrapper {
@@ -92,4 +95,12 @@ body {
         background: $cream;
         padding: 5px 20px;
     }
+}
+
+.btn {
+    background: $orange;
+    padding: 10px;
+    color: $cream;
+    text-decoration: none;
+    border-radius: 8px;
 }

@@ -7,7 +7,6 @@ export default function Header() {
   const [scaleState, setScaleState] = useState(0);
   useEffect(() => {
     scale.onChange(v => {
-      console.log(v);
       setScaleState(v);
     })
   }, [scale])

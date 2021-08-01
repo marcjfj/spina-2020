@@ -1,6 +1,6 @@
 export default {
   label: "Paragraph",
-  name: "paragraph",
+  name: "Paragraph",
   widget: "object",
   fields: [
     {

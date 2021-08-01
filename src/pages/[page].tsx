@@ -8,22 +8,26 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
+
 import HeroBanner from "../components/HeroBanner";
+import Paragraph from "../components/Paragraph";
+import Downloads from "../components/Downloads";
+
 import Header from '../components/Header';
-const myLoader = ({ src, width, quality }) => {
-  return `https://inspiring-lovelace-3e5b25.netlify.app/.netlify/functions/next_image${src}/${width}/${quality || 75}`
-}
+
 const components = {
   HeroBanner,
+  Paragraph,
+  Downloads,
 };
 
 const Page = ({slug, title, sections}) => {
-
+  console.log(sections);
   const renderSections = () => {
-    return sections.map(section => {
+    return sections.map((section, i ) => {
       const Component = components[section.type];
       return (
-        <Component {...section} key={slug}/>
+        <Component {...section} key={i}/>
       )
     })
   }
@@ -57,18 +61,32 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const slug = params.page as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
-  const { content, data } = matter(source, {
-    engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
-  });
-
-
+  const { data } = matter(source);
+  // console.log(data);
+  const parseMDX = async (section) => {
+    const parseObj = {};
+    for (const key of Object.keys(section)) {
+      let val;
+      console.log(section[key]);
+      if (key === 'content') {
+        val = await renderToString(section[key]);
+      } else {
+        val = section[key];
+      }
+      console.log(val);
+      parseObj[key] = val;
+    };
+    return parseObj;
+  }
+  const mdxSections = await Promise.all(data.sections.map( async section => await parseMDX(section)));
+  console.log(mdxSections);
   // const mdxSource = await renderToString(content, { scope: data });
 
   return {
     props: {
       slug: data.slug,
       title: data.title,
-      sections: data.sections,
+      sections: mdxSections,
     },
   };
 };

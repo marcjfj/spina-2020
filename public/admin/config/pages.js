@@ -15,19 +15,31 @@ export default {
       widget: "string",
     },
     {
-      label: "Headline",
-      name: "headline",
-      widget: "string",
-    },
-    {
-      label: "Hero Image",
-      name: "hero_image",
-      widget: "image",
-    },
-    {
-      label: "Content",
-      name: "bo",
-      widget: "markdown",
-    },
+      label: "Sections",
+      name: "sections",
+      widget: "list",
+      types: [
+        {
+          label: "Hero Banner",
+          name: "heroBanner",
+          widget: "object",
+          summary: "",
+          fields: [
+            {
+              label: "Headline",
+              name: "headline",
+              widget: "string",
+            },
+            {
+              label: "Image",
+              name: "image",
+              widget: "image",
+              allow_multiple: false,
+              hint: "Use JPG files only"
+            }
+          ]
+        }
+      ]
+    }
   ],
 };

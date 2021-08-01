@@ -42,6 +42,7 @@ const slugToPostContent = (postContents => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = fetchPageContent().map(it => "/" + it.slug);
+  console.log(paths);
   return {
     paths,
     fallback: true,

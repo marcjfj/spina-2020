@@ -17,7 +17,7 @@ export const fetchPageContent = () => {
   console.log('yoooooo');
     if (pageCache) return pageCache;
 
-    const fileNames = fs.readdirSync(pagesDirectory);
+    const fileNames =  fs.existsSync(pagesDirectory) ? fs.readdirSync(pagesDirectory) : [];
     
 
     const allPagesData = fileNames.filter(name => name.endsWith(".mdx"))

@@ -1,4 +1,5 @@
 import HeroBanner from './blocks/heroBanner.js';
+import Paragraph from 'Paragraph.js';
 
 export default {
   name: "pages",
@@ -27,6 +28,7 @@ export default {
       widget: "list",
       types: [
         HeroBanner,
+        Paragraph,
       ]
     }
   ],

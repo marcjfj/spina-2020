@@ -18,7 +18,7 @@ const components = {
 };
 const renderSections = (sections) => {
   sections.map(section => {
-    const Component = components[sections.type];
+    const Component = components[section.type];
     return (
       <Component {...section} />
     )

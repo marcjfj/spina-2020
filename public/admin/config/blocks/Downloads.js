@@ -6,7 +6,7 @@ export default {
     {
       label: "Files",
       name: "files",
-      type: "list",
+      widget: "list",
       fields: [
         {
           label: "File",

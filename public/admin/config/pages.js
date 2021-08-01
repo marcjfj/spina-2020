@@ -1,4 +1,4 @@
-import heroBanner from './blocks/heroBanner';
+import heroBanner from './blocks/heroBanner.js';
 
 export default {
   name: "pages",

@@ -8,10 +8,21 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
-import Image from 'next/image'
+import HeroBanner from "../components/HeroBanner";
 import Header from '../components/Header';
 const myLoader = ({ src, width, quality }) => {
   return `https://inspiring-lovelace-3e5b25.netlify.app/.netlify/functions/next_image${src}/${width}/${quality || 75}`
+}
+const components = {
+  HeroBanner,
+};
+const renderSections = (sections) => {
+  sections.map(section => {
+    const Component = components[sections.type];
+    return (
+      <Component {...section} />
+    )
+  })
 }
 
 const Page = ({headline, source, hero_image}) => {
@@ -21,12 +32,7 @@ const Page = ({headline, source, hero_image}) => {
   return (
     <div>
       <Header />
-      <div className="hero"> 
-      {/* <img className="heroImage" src={hero_image} /> */}
-      <Image src={hero_image} layout="fill" />
-      <div className="scrim"></div>
-      <h1 className="headline">{headline}</h1>
-      </div>
+      {renderSections}
       <div className="contentWrapper">
         <div className="content">
           {content}
@@ -63,10 +69,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      headline: data.headline,
-      hero_image: data.hero_image,
       slug: data.slug,
-      source: mdxSource
+      title: data.title,
+      sections: data.sections,
     },
   };
 };

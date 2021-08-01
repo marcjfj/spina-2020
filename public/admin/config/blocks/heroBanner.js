@@ -1,6 +1,6 @@
 export default {
   label: "Hero Banner",
-  name: "heroBanner",
+  name: "HeroBanner",
   widget: "object",
   summary: "",
   fields: [

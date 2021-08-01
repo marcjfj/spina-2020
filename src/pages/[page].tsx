@@ -16,23 +16,24 @@ const myLoader = ({ src, width, quality }) => {
 const components = {
   HeroBanner,
 };
-const renderSections = (sections) => {
-  sections.map(section => {
-    const Component = components[section.type];
-    return (
-      <Component {...section} />
-    )
-  })
-}
 
 const Page = ({slug, title, sections}) => {
+  
+  const renderSections = () => {
+    sections.map(section => {
+      const Component = components[section.type];
+      return (
+        <Component {...section} />
+      )
+    })
+  }
   // console.log('source', source);
   // const content = hydrate(source);
   return (
     <div>
       <Header />
       <main>
-        {() => renderSections(sections)}
+        {renderSections}
       </main>
     </div>
 )};
@@ -61,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   });
 
 
-  const mdxSource = await renderToString(content, { scope: data });
+  // const mdxSource = await renderToString(content, { scope: data });
 
   return {
     props: {

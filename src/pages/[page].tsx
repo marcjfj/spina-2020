@@ -44,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = fetchPageContent().map(it => "/" + it.slug);
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 

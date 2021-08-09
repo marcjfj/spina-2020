@@ -74,7 +74,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           ...day,
           Date: day.Date.format("dddd, MMMM Do"),
         }));
-        val = section[key].format("dddd, MMMM Do");
       } else {
         val = section[key];
       }

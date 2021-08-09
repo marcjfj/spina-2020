@@ -2,6 +2,7 @@ export default {
   label: "Calendar",
   name: "Calendar",
   widget: "list",
+  allow_add: true,
   fields: [
     {
       label: "Date",

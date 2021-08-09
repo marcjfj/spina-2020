@@ -7,6 +7,7 @@ export default {
     {
       name: "days",
       title: "Days",
+      widget: "list",
       fields: [
         {
           label: "Date",

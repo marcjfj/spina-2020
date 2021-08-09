@@ -9,10 +9,10 @@ import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 
-import HeroBanner from "../components/HeroBanner";
-import Paragraph from "../components/Paragraph";
-import Downloads from "../components/Downloads";
-
+import HeroBanner from "../components/blocks/HeroBanner";
+import Paragraph from "../components/blocks/Paragraph";
+import Downloads from "../components/blocks/Downloads";
+import ContentImage from "../components/blocks/ContentImage";
 import Header from '../components/Header';
 
 const components = {

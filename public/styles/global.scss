@@ -122,12 +122,12 @@ body {
   .content {
     padding: 3rem;
   }
-}
-.image-wrapper {
-  display: flex;
-  position: relative;
-  width: 400px;
-  padding: 30px;
+  .image-wrapper {
+    display: flex;
+    position: relative;
+    width: 400px;
+    padding: 30px;
+  }
 }
 
 .title {
@@ -144,4 +144,10 @@ body {
     height: 4px;
     background: $orange;
   }
+}
+
+.image-wrapper {
+  display: flex;
+  position: relative;
+  width: 400px;
 }

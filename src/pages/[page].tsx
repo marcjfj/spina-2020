@@ -6,49 +6,49 @@ import matter from "gray-matter";
 import { fetchPageContent } from "../lib/pages";
 import fs from "fs";
 import yaml from "js-yaml";
-import { parseISO } from 'date-fns';
+import { parseISO } from "date-fns";
 import PostLayout from "../components/PostLayout";
 
 import HeroBanner from "../components/blocks/HeroBanner";
 import Paragraph from "../components/blocks/Paragraph";
 import Downloads from "../components/blocks/Downloads";
 import ContentImage from "../components/blocks/ContentImage";
-import Header from '../components/Header';
+import SecondaryImage from "../components/blocks/SecondaryImage";
+import Calendar from "../components/blocks/Calendar";
+import Header from "../components/Header";
 
 const components = {
   HeroBanner,
   Paragraph,
   Downloads,
   ContentImage,
+  SecondaryImage,
 };
 
-const Page = ({slug, title, sections}) => {
+const Page = ({ slug, title, sections }) => {
   console.log(sections);
   const renderSections = () => {
-    return sections.map((section, i ) => {
+    return sections.map((section, i) => {
       const Component = components[section.type];
-      return (
-        <Component {...section} key={i}/>
-      )
-    })
-  }
+      return <Component {...section} key={i} />;
+    });
+  };
   return (
     <div>
       <Header />
-      <main>
-        {renderSections()}
-      </main>
+      <main>{renderSections()}</main>
     </div>
-)};
+  );
+};
 
-const slugToPostContent = (postContents => {
-  let hash = {}
-  postContents.forEach(it => hash[it.slug] = it)
+const slugToPostContent = ((postContents) => {
+  let hash = {};
+  postContents.forEach((it) => (hash[it.slug] = it));
   return hash;
 })(fetchPageContent());
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fetchPageContent().map(it => "/" + it.slug);
+  const paths = fetchPageContent().map((it) => "/" + it.slug);
   console.log(paths);
   return {
     paths,
@@ -57,7 +57,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-
   const slug = params.page as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { data } = matter(source);
@@ -67,17 +66,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     for (const key of Object.keys(section)) {
       let val;
       console.log(section[key]);
-      if (key === 'content') {
+      if (key === "content") {
         val = await renderToString(section[key]);
       } else {
         val = section[key];
       }
       console.log(val);
       parseObj[key] = val;
-    };
+    }
     return parseObj;
-  }
-  const mdxSections = await Promise.all(data.sections.map( async section => await parseMDX(section)));
+  };
+  const mdxSections = await Promise.all(
+    data.sections.map(async (section) => await parseMDX(section))
+  );
   console.log(mdxSections);
   // const mdxSource = await renderToString(content, { scope: data });
 

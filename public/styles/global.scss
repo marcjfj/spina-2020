@@ -145,9 +145,58 @@ body {
     background: $orange;
   }
 }
-
-.image-wrapper {
+.secondary-image {
   display: flex;
   position: relative;
-  width: 400px;
+  padding: 100px 0;
+  .image-wrapper {
+    margin: -50px 0;
+    position: relative;
+    width: 800px;
+    // max-height: 400px;
+    min-height: 200px;
+    @media (max-width: 600px) {
+      position: absolute;
+      z-index: -100;
+      height: calc(100% - 100px);
+      top: 50px;
+      margin: 0;
+    }
+  }
+
+  .bullets {
+    display: flex;
+    position: relative;
+    transform: translateX(-50px);
+    background-color: $cream;
+    width: 400px;
+    z-index: 5;
+    // max-height: 200px;
+    align-items: center;
+    padding: 30px;
+    @media (max-width: 600px) {
+      transform: translateX(0px);
+      justify-content: center;
+      margin: 0 auto;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-top: 2rem;
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: bold;
+    color: $green;
+    display: flex;
+  }
+}
+
+.pumpkinIcon {
+  margin-right: 20px;
+  flex-shrink: 0;
 }

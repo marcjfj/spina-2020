@@ -69,7 +69,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       console.log(section[key]);
       if (key === "content") {
         val = await renderToString(section[key]);
-      } else {
+      } else if (key = "Date") {
+        val = section[key].format("dddd, MMMM Do");
+      }
+      else {
         val = section[key];
       }
       console.log(val);

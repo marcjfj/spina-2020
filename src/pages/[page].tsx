@@ -19,6 +19,7 @@ const components = {
   HeroBanner,
   Paragraph,
   Downloads,
+  ContentImage,
 };
 
 const Page = ({slug, title, sections}) => {

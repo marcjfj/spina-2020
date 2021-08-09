@@ -111,7 +111,13 @@ body {
   align-items: stretch;
   max-width: 1440px;
   margin: 0 auto;
-
+  
+  .image-wrapper {
+    display: flex;
+    position: relative;
+    width: 400px;
+    padding: 30px;
+  }
   @media (max-width: 600px) {
     flex-direction: column;
     .image-wrapper {
@@ -121,12 +127,6 @@ body {
   }
   .content {
     padding: 3rem;
-  }
-  .image-wrapper {
-    display: flex;
-    position: relative;
-    width: 400px;
-    padding: 30px;
   }
 }
 

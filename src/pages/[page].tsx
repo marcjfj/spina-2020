@@ -23,6 +23,7 @@ const components = {
   Downloads,
   ContentImage,
   SecondaryImage,
+  Calendar,
 };
 
 const Page = ({ slug, title, sections }) => {

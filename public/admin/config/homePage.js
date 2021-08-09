@@ -1,4 +1,4 @@
-import Blocks from './blocks';
+import Blocks from './blocks/index.js';
 
 export default {
   name: "HomePage",

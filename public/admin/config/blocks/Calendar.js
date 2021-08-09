@@ -15,6 +15,7 @@ export default {
           widget: "datetime",
           date_format: "dddd, MMMM Do",
           time_format: false,
+          format: "dddd, MMMM Do",
           picker_utc: false,
         },
         {

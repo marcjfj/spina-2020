@@ -5,7 +5,8 @@ export default {
   label: "Home Page",
   files: [{
     name: "general",
-    label: "Settings",
+    label: "Content",
+    description: "Click me to edit the page's content",
     file: "content/homepage/index.mdx",
     extension: "mdx",
     format: "frontmatter",

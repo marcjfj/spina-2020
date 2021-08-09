@@ -1,22 +1,27 @@
 export default {
   label: "Calendar",
   name: "Calendar",
-  widget: "list",
+  widget: "object",
   allow_add: true,
   fields: [
     {
-      label: "Date",
-      name: "Date",
-      widget: "datetime",
-      date_format: "dddd, MMMM Do",
-      time_format: false,
-      picker_utc: false,
-    },
-    {
-      label: "Hours",
-      name: "hours",
-      widget: "string",
+      name: "days",
+      title: "Days",
+      fields: [
+        {
+          label: "Date",
+          name: "Date",
+          widget: "datetime",
+          date_format: "dddd, MMMM Do",
+          time_format: false,
+          picker_utc: false,
+        },
+        {
+          label: "Hours",
+          name: "hours",
+          widget: "string",
+        }
+      ]
     }
-
   ]
 }

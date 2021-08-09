@@ -4,6 +4,7 @@ const config = {
   backend: {
     name: "git-gateway",
     branch: "master",
+    local_backend: true,
   },
   media_folder: "public/images",
   public_folder: "/images",

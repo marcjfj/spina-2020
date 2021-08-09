@@ -1,4 +1,5 @@
 import Pages from "./pages.js";
+import HomePage from "./homePage.js";
 const config = {
   backend: {
     name: "git-gateway",
@@ -61,6 +62,7 @@ const config = {
       ],
     },
     Pages,
+    HomePage,
   ],
 };
 

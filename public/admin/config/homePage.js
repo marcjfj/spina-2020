@@ -1,15 +1,11 @@
 import Blocks from './blocks';
 
 export default {
-  name: "pages",
-  label: "Pages",
+  name: "HomePage",
+  label: "Home Page",
   folder: "content/pages/",
   extension: "mdx",
   format: "frontmatter",
-  create: true,
-  slug: "{{slug}}",
-  identifier_field: "slug",
-  summary: "{{title}}",
   fields: [
     {
       label: "Slug",
@@ -24,4 +20,4 @@ export default {
     },
     {...Blocks}
   ],
-};
+}

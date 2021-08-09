@@ -4,7 +4,12 @@ const config = {
   backend: {
     name: "git-gateway",
     branch: "master",
-    local_backend: true,
+    local_backend: {
+      // # when using a custom proxy server port
+      url: 'http://localhost:8082/api/v1',
+      // # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+      allowed_hosts: ['192.168.0.1'],
+    }
   },
   media_folder: "public/images",
   public_folder: "/images",

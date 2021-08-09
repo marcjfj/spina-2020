@@ -3,7 +3,7 @@ import Blocks from './blocks/index.js';
 export default {
   name: "HomePage",
   label: "Home Page",
-  files: {
+  files: [{
     name: "general",
     label: "Settings",
     file: "content/homepage/index.mdx",
@@ -23,5 +23,5 @@ export default {
       },
       {...Blocks}
     ],
-  }
+  }]
 }

@@ -1,14 +1,17 @@
-import Image from 'next/image';
+import Image from "next/image";
+import hydrate from "next-mdx-remote/hydrate";
 
-export default function ContentImage({title, image, content}) {
+export default function ContentImage({ title, image, content }) {
+  const parsedContent = hydrate(content);
   return (
     <section className="content-image">
       <div className="content">
-        {content}
-      </div>
+        <h3 className="title">{title}</h3>
+        {parsedContent}
+        </div>
       <div className="image-wrapper">
-        <Image src={image} layout="fill" className="image" />
+        <Image src={image} layout="fill" objectFit="cover" className="image" />
       </div>
     </section>
-  )
+  );
 }

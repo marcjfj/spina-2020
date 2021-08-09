@@ -3,7 +3,7 @@ import Blocks from './blocks/index.js';
 export default {
   name: "HomePage",
   label: "Home Page",
-  folder: "content/pages/",
+  folder: "content/homepage/",
   extension: "mdx",
   format: "frontmatter",
   fields: [

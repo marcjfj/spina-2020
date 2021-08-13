@@ -19,6 +19,9 @@ body {
   background: $lightGreen;
   color: $text;
 }
+ul {
+    padding: 0;
+}
 
 .hero {
   display: flex;
@@ -217,7 +220,7 @@ body {
     
     h2 {
       color: $cream;
-      padding-left: 80px;
+      padding-left: 30px;
     }
 }
 
@@ -229,11 +232,10 @@ body {
 
 .date {
   background-color: $cream;
-  margin: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .actually-the-date {

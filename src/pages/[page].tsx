@@ -80,8 +80,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
   const mdxSections = await Promise.all(
     data.sections.map(async (section) => await parseMDX(section))
-  );
+  ) as any;
   console.log(mdxSections);
+  const calendarSection = mdxSections.findIndex(sec => sec.type === 'Calendar');
+  if (calendarSection !== -1 || true) {
+    const calendarFile = fs.readFileSync('content/calendar.json', "utf8");
+    console.log(calendarFile);
+    console.log(mdxSections[calendarSection].days);
+    mdxSections[calendarSection].days = JSON.parse(calendarFile).days || [];
+  }
   // const mdxSource = await renderToString(content, { scope: data });
 
   return {

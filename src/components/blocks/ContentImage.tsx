@@ -8,7 +8,7 @@ export default function ContentImage({ title, image, content }) {
       <div className="content">
         <h3 className="title">{title}</h3>
         {parsedContent}
-        </div>
+      </div>
       <div className="image-wrapper">
         <Image src={image} layout="fill" objectFit="cover" className="image" />
       </div>

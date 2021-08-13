@@ -38,7 +38,7 @@ ul {
   font-weight: 700;
   font-size: 2rem;
   padding: 20px;
-  @media (min-width: 800px) {
+  @media (min-width: 1180px) {
     font-size: 4rem;
   }
 }
@@ -121,7 +121,7 @@ ul {
     width: 400px;
     padding: 30px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1180px) {
     flex-direction: column;
     .image-wrapper {
       min-height: 300px;
@@ -155,10 +155,10 @@ ul {
   .image-wrapper {
     margin: -50px 0;
     position: relative;
-    width: 800px;
+    width: 100%;
     // max-height: 400px;
     min-height: 200px;
-    @media (max-width: 600px) {
+    @media (max-width: 1180px) {
       position: absolute;
       z-index: -100;
       height: calc(100% - 100px);
@@ -177,7 +177,7 @@ ul {
     // max-height: 200px;
     align-items: center;
     padding: 30px;
-    @media (max-width: 600px) {
+    @media (max-width: 1180px) {
       transform: translateX(0px);
       justify-content: center;
       margin: 0 auto;
@@ -215,7 +215,7 @@ ul {
     flex-direction: column;
     background-color: $green;
     width: 100%;
-    max-width: 800px;
+    // max-width: 800px;
     padding: 30px;
     
     h2 {
@@ -227,15 +227,25 @@ ul {
 .calendarList {
   list-style: none;
   margin: 20px;
-  
+  margin-top: 40px;
+  @media (min-width: 1180px) {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+  }
 }
 
 .date {
+  position: relative;
   background-color: $cream;
   margin-bottom: 20px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
+
+  @media(min-width: 1180px) {
+    flex-direction: column;
+    margin: 5px;
+  }
 }
 
 .actually-the-date {
@@ -243,4 +253,23 @@ ul {
   font-weight: bold;
   font-style: italic;
   color: $green;
+  min-width: 50px;
+  display: inline-block;
+}
+
+.week-day {
+  margin-left: 10px;
+  opacity: 0.7;
+  @media (min-width: 1180px) {
+    display: none;
+  }
+}
+
+.day-label {
+  position: absolute;
+  top: -32px;
+  color: $cream;
+  @media (max-width: 1180px) {
+    display: none;
+  }
 }

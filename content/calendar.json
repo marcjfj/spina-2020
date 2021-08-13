@@ -1,1 +1,52 @@
-{}
+{
+  "days": [
+    {
+      "Date": "Monday, September 27th",
+      "hours": "10am - 5pm"
+    },
+    {
+      "Date": "Tuesday, September 28th",
+      "hours": "10am - 5pm"
+    },
+    {
+      "Date": "Wednesday, September 29th",
+      "hours": "10am - 5pm"
+    },
+    {
+      "Date": "Thursday, September 30th",
+      "hours": "10am - 5pm"
+    },
+    {
+      "Date": "Friday, October 1st",
+      "hours": "10am - 7pm"
+    },
+    {
+      "Date": "Saturday, October 2nd",
+      "hours": "10am - 7pm"
+    },
+    {
+      "Date": "Sunday, October 3rd",
+      "hours": "10am - 6pm"
+    },
+    {
+      "Date": "Monday, October 4th",
+      "hours": "10am - 5pm"
+    },
+    {
+      "Date": "Tuesday, October 5th",
+      "hours": "9am - 5pm"
+    },
+    {
+      "Date": "Wednesday, October 6th",
+      "hours": "9am - 5pm"
+    },
+    {
+      "Date": "Thursday, October 7th",
+      "hours": "9am - 5pm"
+    },
+    {
+      "Date": "Friday, October 8th",
+      "hours": "9am - 9pm"
+    }
+  ]
+}

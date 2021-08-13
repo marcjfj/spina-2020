@@ -111,7 +111,7 @@ body {
   align-items: stretch;
   max-width: 1440px;
   margin: 0 auto;
-  
+
   .image-wrapper {
     display: flex;
     position: relative;
@@ -199,4 +199,46 @@ body {
 .pumpkinIcon {
   margin-right: 20px;
   flex-shrink: 0;
+}
+
+
+.calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendarWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: $green;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    
+    h2 {
+      color: $cream;
+      padding-left: 80px;
+    }
+}
+
+.calendarList {
+  list-style: none;
+  margin: 20px;
+  
+}
+
+.date {
+  background-color: $cream;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.actually-the-date {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  color: $green;
 }

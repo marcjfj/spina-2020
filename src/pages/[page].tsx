@@ -1,13 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import renderToString from "next-mdx-remote/render-to-string";
-import { MdxRemote } from "next-mdx-remote/types";
-import hydrate from "next-mdx-remote/hydrate";
 import matter from "gray-matter";
 import { fetchPageContent } from "../lib/pages";
 import fs from "fs";
-import yaml from "js-yaml";
-import { parseISO } from "date-fns";
-import PostLayout from "../components/PostLayout";
 
 import HeroBanner from "../components/blocks/HeroBanner";
 import Paragraph from "../components/blocks/Paragraph";
@@ -15,6 +10,9 @@ import Downloads from "../components/blocks/Downloads";
 import ContentImage from "../components/blocks/ContentImage";
 import SecondaryImage from "../components/blocks/SecondaryImage";
 import Calendar from "../components/blocks/Calendar";
+import Map from "../components/blocks/Map";
+import Footer from "../components/Footer";
+
 import Header from "../components/Header";
 
 const components = {
@@ -24,6 +22,7 @@ const components = {
   ContentImage,
   SecondaryImage,
   Calendar,
+  Map,
 };
 
 const Page = ({ slug, title, sections }) => {
@@ -38,6 +37,7 @@ const Page = ({ slug, title, sections }) => {
     <div>
       <Header />
       <main>{renderSections()}</main>
+      <Footer />
     </div>
   );
 };

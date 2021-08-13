@@ -1,5 +1,5 @@
 export default {
-  name: "map",
+  name: "Map",
   label: "Map",
   widget: "object",
   fields: [

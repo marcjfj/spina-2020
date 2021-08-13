@@ -64,6 +64,11 @@ const config = {
               name: "github_account",
               widget: "string",
             },
+            {
+              label: "Phone Number",
+              name: "phone",
+              widget: "string",
+            }
           ],
         },
         Calendar,

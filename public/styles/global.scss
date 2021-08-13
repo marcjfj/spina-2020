@@ -273,3 +273,26 @@ ul {
     display: none;
   }
 }
+
+.map {
+  
+}
+
+.map-container {
+  height: 60vh;
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-decoration: none;
+  background: $text;
+  a {
+    color: $cream;
+  }
+}

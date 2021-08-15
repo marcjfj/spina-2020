@@ -153,12 +153,33 @@ ul {
   background: $green;
   z-index: 9;
   transition: opacity 0.3s;
+  display: flex;
   &:not(.show) {
     opacity: 0;
     pointer-events: none;
   }
-
+  align-items: center;
+  justify-content: center;
+  color: $cream;
+  a {
+    color: $cream;
+    text-decoration: none;
+    text-align: left;
+    font-size: 2.25rem;
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 25px;
+  }
 }
+
+.links-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  height: 100vh;
+}
+
 .btn {
   background: $orange;
   padding: 10px;

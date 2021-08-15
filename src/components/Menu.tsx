@@ -1,7 +1,23 @@
-export default function Menu({show}) {
+import Link from 'next/link'
+
+export default function Menu({show, menuConfig, closeMenu}) {
+  console.log(menuConfig)
+  const renderLinks = (pages) => {
+    return pages.map(({slug, title}) => {
+      return (
+        <Link 
+        key={slug}
+        href={`/${slug}`}>
+          <a onClick={closeMenu}>{title}</a>
+        </Link>
+      )
+  })
+  }
   return (
     <div className={`menu ${show && 'show'}`}>
-
+      <div className="links-wrapper">
+        {renderLinks(menuConfig)}
+      </div>
     </div>
   )
 }

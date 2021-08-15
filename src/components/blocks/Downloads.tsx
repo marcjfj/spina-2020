@@ -1,5 +1,5 @@
 export default function Downloads({files}) {
-  console.log(files);
+  // console.log(files);
   return (
     <section className="downloads">
       <div className="content">

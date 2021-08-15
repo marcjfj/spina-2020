@@ -26,8 +26,8 @@ const components = {
   Map,
 };
 
-const Page = ({ slug, title, sections, config }) => {
-  console.log(sections);
+const Page = ({ slug, title, sections, config, menuConfig }) => {
+  // console.log(sections);
   const renderSections = () => {
     return sections.map((section, i) => {
       const Component = components[section.type];
@@ -36,7 +36,7 @@ const Page = ({ slug, title, sections, config }) => {
   };
   return (
     <div>
-      <Header />
+      <Header menuConfig={menuConfig} />
       <main>{renderSections()}</main>
       <Footer phone={config.phone} />
     </div>
@@ -59,6 +59,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+
+  // page data
   const slug = params.page as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { data } = matter(source);
@@ -73,33 +75,43 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       } else {
         val = section[key];
       }
-      console.log(val);
       parseObj[key] = val;
     }
     return parseObj;
   };
   const mdxSections = (await Promise.all(
-    data.sections.map(async (section) => await parseMDX(section))
+    data.sections ? data.sections.map(async (section) => await parseMDX(section)) : []
   )) as any;
-  console.log(mdxSections);
-  const calendarSection = mdxSections.findIndex(
+  // console.log(mdxSections);
+
+
+  // calendar data
+  const calendarSectionIndex = mdxSections.findIndex(
     (sec) => sec.type === "Calendar"
   );
-  if (calendarSection !== -1 || true) {
+
+  if (calendarSectionIndex !== -1) {
     const calendarFile = fs.readFileSync("content/calendar.json", "utf8");
-    console.log(calendarFile);
-    console.log(mdxSections[calendarSection].days);
-    mdxSections[calendarSection].days = JSON.parse(calendarFile).days || [];
+    mdxSections[calendarSectionIndex].days = JSON.parse(calendarFile).days || [];
   }
   // const mdxSource = await renderToString(content, { scope: data });
   const config = fs.readFileSync("config.json", "utf8");
+  // Menu data
+  const menuFile = fs.readFileSync("content/menu.json", "utf8");
+  const menuConfig = JSON.parse(menuFile);
+  // console.log(fetchPageContent());
+  const fullMenuConfig = menuConfig.pages.map(menuPage => {
+    return fetchPageContent().find(({slug}) => slug === menuPage.page);
+  })
 
+  console.log(fullMenuConfig);
   return {
     props: {
       slug: data.slug,
       title: data.title,
       sections: mdxSections,
       config: JSON.parse(config),
+      menuConfig: fullMenuConfig,
     },
   };
 };

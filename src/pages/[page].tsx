@@ -14,6 +14,7 @@ import Map from "../components/blocks/Map";
 import Footer from "../components/Footer";
 
 import Header from "../components/Header";
+import config from "../lib/config";
 
 const components = {
   HeroBanner,
@@ -25,7 +26,7 @@ const components = {
   Map,
 };
 
-const Page = ({ slug, title, sections }) => {
+const Page = ({ slug, title, sections, config }) => {
   console.log(sections);
   const renderSections = () => {
     return sections.map((section, i) => {
@@ -37,7 +38,7 @@ const Page = ({ slug, title, sections }) => {
     <div>
       <Header />
       <main>{renderSections()}</main>
-      <Footer />
+      <Footer phone={config.phone} />
     </div>
   );
 };
@@ -69,7 +70,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       console.log(section[key]);
       if (key === "content") {
         val = await renderToString(section[key]);
-
       } else {
         val = section[key];
       }
@@ -78,24 +78,28 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
     return parseObj;
   };
-  const mdxSections = await Promise.all(
+  const mdxSections = (await Promise.all(
     data.sections.map(async (section) => await parseMDX(section))
-  ) as any;
+  )) as any;
   console.log(mdxSections);
-  const calendarSection = mdxSections.findIndex(sec => sec.type === 'Calendar');
+  const calendarSection = mdxSections.findIndex(
+    (sec) => sec.type === "Calendar"
+  );
   if (calendarSection !== -1 || true) {
-    const calendarFile = fs.readFileSync('content/calendar.json', "utf8");
+    const calendarFile = fs.readFileSync("content/calendar.json", "utf8");
     console.log(calendarFile);
     console.log(mdxSections[calendarSection].days);
     mdxSections[calendarSection].days = JSON.parse(calendarFile).days || [];
   }
   // const mdxSource = await renderToString(content, { scope: data });
+  const config = fs.readFileSync("config.json", "utf8");
 
   return {
     props: {
       slug: data.slug,
       title: data.title,
       sections: mdxSections,
+      config: JSON.parse(config),
     },
   };
 };

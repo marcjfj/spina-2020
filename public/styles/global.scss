@@ -20,7 +20,7 @@ body {
   color: $text;
 }
 ul {
-    padding: 0;
+  padding: 0;
 }
 
 .hero {
@@ -81,8 +81,12 @@ ul {
   width: 100%;
   z-index: 1000;
   display: flex;
+  align-items: center;
   padding: 12px 20px;
   transition: 0.5s background;
+  * {
+    z-index: 10;
+  }
   &.scrolled {
     background: $green;
   }
@@ -96,10 +100,65 @@ ul {
     border: none;
     color: $text;
     background: $cream;
-    padding: 5px 20px;
+    padding: 20px;
+  }
+  .menu-button {
+    width: 45px;
+    height: 40px;
+    background: transparent;
+    border: 0;
+    margin: 0 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    i {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: white;
+      left: 0;
+      transition: all 0.3s;
+
+      &:first-child {
+        transform: translateY(-12px);
+      }
+      &:last-child {
+        transform: translateY(12px);
+      }
+    }
+    &.menu-open {
+      i {
+        &:first-child {
+          transform: translateY(0px) rotate(40deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          transform: translateY(0px) rotate(-40deg);
+        }
+      }
+    }
   }
 }
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $green;
+  z-index: 9;
+  transition: opacity 0.3s;
+  &:not(.show) {
+    opacity: 0;
+    pointer-events: none;
+  }
 
+}
 .btn {
   background: $orange;
   padding: 10px;
@@ -112,7 +171,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  max-width: 1440px;
+  max-width: 1024px;
   margin: 0 auto;
 
   .image-wrapper {
@@ -130,6 +189,7 @@ ul {
   }
   .content {
     padding: 3rem;
+    padding-left: 0;
   }
 }
 
@@ -152,6 +212,8 @@ ul {
   display: flex;
   position: relative;
   padding: 100px 0;
+  max-width: 1024px;
+  margin: 0 auto;
   .image-wrapper {
     margin: -50px 0;
     position: relative;
@@ -204,24 +266,23 @@ ul {
   flex-shrink: 0;
 }
 
-
 .calendar {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: $green;
 }
 .calendarWrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: $green;
-    width: 100%;
-    // max-width: 800px;
-    padding: 30px;
-    
-    h2 {
-      color: $cream;
-      padding-left: 30px;
-    }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1024px;
+  padding: 30px 0;
+
+  h2 {
+    color: $cream;
+    padding-left: 30px;
+  }
 }
 
 .calendarList {
@@ -229,8 +290,8 @@ ul {
   margin: 20px;
   margin-top: 40px;
   @media (min-width: 1180px) {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
   }
 }
 
@@ -242,7 +303,7 @@ ul {
   display: flex;
   justify-content: space-between;
 
-  @media(min-width: 1180px) {
+  @media (min-width: 1180px) {
     flex-direction: column;
     margin: 5px;
   }
@@ -275,18 +336,17 @@ ul {
 }
 
 .map {
-  
 }
 
 .map-container {
   height: 60vh;
-  max-width: 800px;
+  // max-width: 800px;
   margin: 0 auto;
-  
 }
 
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 200px;
@@ -295,4 +355,9 @@ ul {
   a {
     color: $cream;
   }
+}
+
+.phone {
+  color: $cream;
+  margin: 20px;
 }

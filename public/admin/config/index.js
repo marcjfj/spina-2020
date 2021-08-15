@@ -1,6 +1,7 @@
 import Pages from "./pages.js";
 import HomePage from "./homePage.js";
 import Calendar from './calendar.js';
+import Menu from './menu.js';
 const config = {
   backend: {
     name: "git-gateway",
@@ -71,6 +72,7 @@ const config = {
             }
           ],
         },
+        Menu,
         Calendar,
       ],
     },

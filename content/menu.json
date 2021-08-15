@@ -1,7 +1,13 @@
 {
   "pages": [
     {
+      "page": "attractions"
+    },
+    {
       "page": "parties"
+    },
+    {
+      "page": "schools"
     }
   ]
 }

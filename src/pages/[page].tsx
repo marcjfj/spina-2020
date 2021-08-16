@@ -11,8 +11,8 @@ import ContentImage from "../components/blocks/ContentImage";
 import SecondaryImage from "../components/blocks/SecondaryImage";
 import Calendar from "../components/blocks/Calendar";
 import Map from "../components/blocks/Map";
+import Form from "../components/blocks/Form";
 import Footer from "../components/Footer";
-
 import Header from "../components/Header";
 import config from "../lib/config";
 
@@ -24,6 +24,7 @@ const components = {
   SecondaryImage,
   Calendar,
   Map,
+  Form,
 };
 
 const Page = ({ slug, title, sections, config, menuConfig }) => {

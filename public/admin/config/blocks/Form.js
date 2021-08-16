@@ -3,7 +3,12 @@ export default {
   name: "Form",
   widget: "object",
   fields: [
-        {
+    {
+      label: "Title",
+      name: "title",
+      widget: "string",
+    },
+    {
       label: "Inputs",
       name: "inputs",
       widget: "list",

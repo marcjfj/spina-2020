@@ -10,7 +10,7 @@ export default {
       fields: [
         {
           label: "Input Type",
-          type: "type",
+          name: "type",
           widget: "select",
           options: [
             {

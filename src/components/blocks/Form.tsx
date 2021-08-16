@@ -2,7 +2,12 @@ export default function Form({inputs}) {
   console.log(inputs)
   return (
     <section className="form-wrapper">
-      <form method="POST" data-netlify="true" name="contact" className="form">
+      <form 
+        method="POST" 
+        data-netlify="true" 
+        name="contact" 
+        action="/contact"
+        className="form">
         {inputs.map(({Label, type}) => {
           return (
           <div className="input-wrapper">

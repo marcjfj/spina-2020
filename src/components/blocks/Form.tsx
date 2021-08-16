@@ -8,9 +8,9 @@ export default function Form({inputs}) {
           <div className="input-wrapper">
             <label className="form-label"> {Label}
             {type === 'textarea' ? (
-              <textarea className="input" rows={10}></textarea>
+              <textarea className="input" name={Label} rows={10}></textarea>
             ) : (
-              <input className="input" type={type} required/>
+              <input className="input" name={Label} type={type} required/>
             )}
               </label>
           </div> 

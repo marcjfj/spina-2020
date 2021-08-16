@@ -6,6 +6,7 @@ import SecondaryImage from './SecondaryImage.js';
 import Calendar from './Calendar.js';
 import Mappy from './map.js';
 import Form from './Form.js';
+import HomeHero from './HomeHero.js';
 
 export default {
   label: "Sections",
@@ -20,5 +21,6 @@ export default {
     Calendar,
     Mappy,
     Form,
+    HomeHero
   ]
 }

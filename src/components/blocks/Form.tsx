@@ -21,7 +21,7 @@ export default function Form({inputs}) {
           </div> 
           )
         })}
-        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="form-name" value="contact" />
         <button className="send-button">
           Send
           </button>

@@ -53,6 +53,9 @@ ul {
   padding: 20px 10px;
   line-height: 1.75rem;
   margin: 0 auto;
+  img {
+    max-width: 100%;
+  }
 }
 .hero img {
   object-fit: cover;
@@ -154,6 +157,7 @@ ul {
   z-index: 9;
   transition: opacity 0.3s;
   display: flex;
+
   &:not(.show) {
     opacity: 0;
     pointer-events: none;

@@ -8,6 +8,7 @@ export default function Form({inputs}) {
   }, {})});
   const [formSubmitted, setFormSubmitted] = useState(false);
   const router = useRouter();
+  console.log(router);
   const successMsg = () => {
     return formSubmitted ? (
         <div className="success-msg">
@@ -39,7 +40,7 @@ export default function Form({inputs}) {
         ref={formRef}
         method="POST" 
         data-netlify="true" 
-        name="contact" 
+        name={`${router.query.page}`} 
         action="/contact?submitted=true"
         className="form">
         {successMsg()}
@@ -56,7 +57,7 @@ export default function Form({inputs}) {
           </div> 
           )
         })}
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value={`${router.query.page}`} />
         <button onClick={(e) => handleSubmit(e)}className="send-button">
           Send
           </button>

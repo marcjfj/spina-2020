@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import components from "./blocks";
 
-export default function PageLayout({ slug, title, sections, config, menuConfig }) {
+export default function PageLayout({ slug, title, sections = [], config = {phone: ""}, menuConfig }) {
   const renderSections = () => {
     return sections.map((section, i) => {
       const Component = components[section.type];
@@ -11,9 +11,9 @@ export default function PageLayout({ slug, title, sections, config, menuConfig }
   };
   return (
     <div>
-      <Header menuConfig={menuConfig} />
+      {/* <Header menuConfig={menuConfig} /> */}
       <main>{renderSections()}</main>
-      <Footer phone={config.phone} />
+      {/* <Footer phone={config.phone} /> */}
     </div>
   );
 }

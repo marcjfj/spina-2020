@@ -24,9 +24,6 @@ export default function Header({menuConfig}) {
           </a>
         </Link>
       </div>
-      <button className="contact-button">
-        Contact Us
-      </button>
       <button
       onClick={() => setShowMenu(!showMenu)}
       className={`menu-button ${showMenu && 'menu-open'}`} 

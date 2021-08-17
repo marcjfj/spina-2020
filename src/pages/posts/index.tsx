@@ -13,8 +13,6 @@ import PageLayout from '../../components/PageLayout';
 
 
 export default function Index(props) {
-  const url = "/posts";
-  const title = "All posts";
   return (
     <div>
     <PageLayout {...props} />
@@ -22,6 +20,6 @@ export default function Index(props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  return null;
-};
+// export const getStaticProps: GetStaticProps = async () => {
+//   return null;
+// };

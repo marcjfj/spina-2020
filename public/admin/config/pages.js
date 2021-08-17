@@ -22,6 +22,11 @@ export default {
       name: "title",
       widget: "string",
     },
+    {
+      label: "Meta Description",
+      name: "metaDescription",
+      widget: "string",
+    },
     {...Blocks}
   ],
 };

@@ -235,6 +235,11 @@ ul {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+  padding: 3rem 0;
+
+  .title {
+    margin-top: 0;
+  }
 
   .image-wrapper {
     display: flex;
@@ -245,6 +250,7 @@ ul {
   }
   @media (max-width: 1180px) {
     flex-direction: column;
+    padding: 0;
     .image-wrapper {
       min-height: 300px;
       width: 100%;
@@ -259,6 +265,25 @@ ul {
 
 .image-left {
   flex-direction: row-reverse;
+  .content {
+    padding-left: 3rem;
+  }
+  @media (max-width: 1180px) {
+    flex-direction: column;
+    .image-wrapper {
+      min-height: 300px;
+      width: 100%;
+    }
+  }
+}
+
+.image-right {
+    @media (max-width: 1180px) {
+    flex-direction: column;
+    .content {
+      padding: 3rem;
+    }
+  }
 }
 
 .title {

@@ -1,5 +1,6 @@
 import Footer from "./Footer";
 import Header from "./Header";
+import Head from "next/head";
 import components from "./blocks";
 
 export default function PageLayout({ slug, title, sections = [], config = {phone: ""}, menuConfig }) {
@@ -11,6 +12,10 @@ export default function PageLayout({ slug, title, sections = [], config = {phone
   };
   return (
     <div>
+      <Head>
+        <title>{title}</title>
+        {/* <meta /> */}
+      </Head>
       <Header menuConfig={menuConfig} />
       <main>{renderSections()}</main>
       <Footer phone={config.phone} />

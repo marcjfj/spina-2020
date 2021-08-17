@@ -23,15 +23,46 @@ body {
 ul {
   padding: 0;
 }
-
-.hero {
+// hero 
+.hero, .home-hero {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   min-height: 60vh;
 }
-
+.home-hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  .top-text, .bottom-text {
+    position: relative;
+    color: $cream;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 800;
+    padding-bottom: 40px;
+  }
+  .bottom-text {
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .logo {
+    position: relative;
+    max-width: 515px;
+  }
+  .top-text::after {
+    content: "";
+    background-color: $orange;
+    height: 3px;
+    width: 169px;
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .headline {
   text-align: center;
   position: relative;
@@ -58,7 +89,7 @@ ul {
     max-width: 100%;
   }
 }
-.hero img {
+.hero img, .home-hero img {
   object-fit: cover;
 }
 .heroImage {
@@ -78,6 +109,7 @@ ul {
   background: rgba(0, 0, 0, 0.466);
 }
 
+// header
 .header {
   position: fixed;
   top: 0;
@@ -98,6 +130,7 @@ ul {
   .logo {
     margin-right: auto;
     border: 0;
+    width: 200px;
   }
   .contact-button {
     appearance: none;
@@ -399,11 +432,7 @@ ul {
 }
 
 .form-wrapper {
-  padding-top: 200px;
-  padding-bottom: 300px;
-  @media (max-width: 1180px) {
-    padding: 100px 20px;
-  }
+  padding: 100px 20px;
 }
 
 .input {

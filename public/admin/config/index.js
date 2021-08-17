@@ -56,6 +56,16 @@ const config = {
               },
             },
             {
+              label: "Home Page",
+              name: "homepage",
+              widget: "relation",
+              collection: "pages",
+              value_field: "slug",
+              display_fields: ["title"],
+              search_fields: ["slug", "title"],
+
+            },
+            {
               label: "Twitter account",
               name: "twitter_account",
               widget: "string",

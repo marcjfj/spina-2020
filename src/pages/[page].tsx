@@ -4,42 +4,13 @@ import matter from "gray-matter";
 import { fetchPageContent } from "../lib/pages";
 import fs from "fs";
 
-import HeroBanner from "../components/blocks/HeroBanner";
-import Paragraph from "../components/blocks/Paragraph";
-import Downloads from "../components/blocks/Downloads";
-import ContentImage from "../components/blocks/ContentImage";
-import SecondaryImage from "../components/blocks/SecondaryImage";
-import Calendar from "../components/blocks/Calendar";
-import Map from "../components/blocks/Map";
-import Form from "../components/blocks/Form";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import config from "../lib/config";
+import PageLayout from "../components/PageLayout";
 
-const components = {
-  HeroBanner,
-  Paragraph,
-  Downloads,
-  ContentImage,
-  SecondaryImage,
-  Calendar,
-  Map,
-  Form,
-};
 
-const Page = ({ slug, title, sections, config, menuConfig }) => {
-  // console.log(sections);
-  const renderSections = () => {
-    return sections.map((section, i) => {
-      const Component = components[section.type];
-      return <Component {...section} key={i} />;
-    });
-  };
+const Page = (props) => {
   return (
     <div>
-      <Header menuConfig={menuConfig} />
-      <main>{renderSections()}</main>
-      <Footer phone={config.phone} />
+      <PageLayout {...props}></PageLayout>
     </div>
   );
 };

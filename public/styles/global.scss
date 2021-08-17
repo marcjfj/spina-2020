@@ -79,15 +79,17 @@ ul {
   width: 100%;
   display: flex;
 }
-
-.content {
-  max-width: 600px;
-  padding: 20px 10px;
-  line-height: 1.75rem;
-  margin: 0 auto;
-  img {
-    max-width: 100%;
+.paragraph {
+  .content {
+    max-width: 600px;
+    padding: 20px 10px;
+    line-height: 1.75rem;
+    margin: 0 auto;
+    img {
+      max-width: 100%;
+    }
   }
+
 }
 .hero img, .home-hero img {
   object-fit: cover;
@@ -228,16 +230,18 @@ ul {
 
 .content-image {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: stretch;
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
 
   .image-wrapper {
     display: flex;
     position: relative;
-    width: 400px;
+    // width: 100%;
     padding: 30px;
+    flex-basis: 50%;
   }
   @media (max-width: 1180px) {
     flex-direction: column;
@@ -249,7 +253,12 @@ ul {
   .content {
     padding: 3rem;
     padding-left: 0;
+    flex-basis: 50%;
   }
+}
+
+.image-left {
+  flex-direction: row-reverse;
 }
 
 .title {

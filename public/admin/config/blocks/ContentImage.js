@@ -20,5 +20,22 @@ export default {
       name: "content",
       widget: "markdown",
     },
+    {
+      label: "Layout",
+      name: "layout",
+      widget: "select",
+      default: "image-right",
+      options: [
+        {
+          label: "Image Right",
+          value: "image-right",
+        },
+        {
+          label: "Image Left",
+          value: "image-left",
+        },
+        
+    ]
+    }
   ],
 }

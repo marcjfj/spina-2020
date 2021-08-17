@@ -11,9 +11,9 @@ export default function PageLayout({ slug, title, sections = [], config = {phone
   };
   return (
     <div>
-      {/* <Header menuConfig={menuConfig} /> */}
+      <Header menuConfig={menuConfig} />
       <main>{renderSections()}</main>
-      {/* <Footer phone={config.phone} /> */}
+      <Footer phone={config.phone} />
     </div>
   );
 }

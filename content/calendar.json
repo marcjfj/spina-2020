@@ -47,6 +47,98 @@
     {
       "Date": "Friday, October 8th",
       "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Saturday, October 9th",
+      "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Sunday, October 10th",
+      "hours": "10am - 7pm"
+    },
+    {
+      "Date": "Monday, October 11th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Tuesday, October 12th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Wednesday, October 13th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Thursday, October 14th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Friday, October 15th",
+      "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Saturday, October 16th",
+      "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Sunday, October 17th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Monday, October 18th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Tuesday, October 19th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Wednesday, October 20th",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Thursday, October 21st",
+      "hours": "9am - 7pm"
+    },
+    {
+      "Date": "Friday, October 22nd",
+      "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Saturday, October 23rd",
+      "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Sunday, October 24th",
+      "hours": "9am - 8pm"
+    },
+    {
+      "Date": "Monday, October 25th",
+      "hours": "9am - 8pm"
+    },
+    {
+      "Date": "Tuesday, October 26th",
+      "hours": "9am - 8pm"
+    },
+    {
+      "Date": "Wednesday, October 27th",
+      "hours": "9am - 8pm"
+    },
+    {
+      "Date": "Thursday, October 28th",
+      "hours": "9am - 8pm"
+    },
+    {
+      "Date": "Friday, October 29th",
+      "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Saturday, October 30th",
+      "hours": "9am - 9pm"
+    },
+    {
+      "Date": "Sunday, October 31st",
+      "hours": "9am - 3pm"
     }
   ]
 }

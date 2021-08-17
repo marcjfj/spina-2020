@@ -312,6 +312,7 @@ ul {
     position: relative;
     width: 100%;
     // max-height: 400px;
+    max-width: 50%;
     min-height: 200px;
     @media (max-width: 1180px) {
       position: absolute;
@@ -319,6 +320,7 @@ ul {
       height: calc(100% - 100px);
       top: 50px;
       margin: 0;
+      max-with: 100%;
     }
   }
 
@@ -329,6 +331,7 @@ ul {
     background-color: $cream;
     width: 400px;
     z-index: 5;
+    width: 100%;
     // max-height: 200px;
     align-items: center;
     padding: 30px;
@@ -351,6 +354,7 @@ ul {
     font-weight: bold;
     color: $green;
     display: flex;
+    align-items: center;
   }
 }
 

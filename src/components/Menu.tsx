@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 export default function Menu({show, menuConfig, closeMenu}) {
-  console.log(menuConfig)
   const renderLinks = (pages) => {
     return pages.map(({slug, title}) => {
       return (

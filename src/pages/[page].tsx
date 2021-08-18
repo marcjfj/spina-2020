@@ -23,7 +23,6 @@ const slugToPostContent = ((postContents) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = fetchPageContent().map((it) => "/" + it.slug);
-  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -36,12 +35,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params.page as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { data } = matter(source);
-  // console.log(data);
   const parseMDX = async (section) => {
     const parseObj = {};
     for (const key of Object.keys(section)) {
       let val;
-      console.log(section[key]);
       if (key === "content") {
         val = await renderToString(section[key]);
       } else {
@@ -54,7 +51,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSections = (await Promise.all(
     data.sections ? data.sections.map(async (section) => await parseMDX(section)) : []
   )) as any;
-  // console.log(mdxSections);
 
 
   // calendar data
@@ -71,12 +67,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Menu data
   const menuFile = fs.readFileSync("content/menu.json", "utf8");
   const menuConfig = JSON.parse(menuFile);
-  // console.log(fetchPageContent());
   const fullMenuConfig = menuConfig.pages.map(menuPage => {
     return fetchPageContent().find(({slug}) => slug === menuPage.page);
   })
 
-  console.log(fullMenuConfig);
   return {
     props: {
       slug: data.slug,

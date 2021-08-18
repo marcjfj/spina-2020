@@ -14,7 +14,6 @@ export type PageContent = {
 let pageCache;
 
 export const fetchPageContent = () => {
-  console.log('yoooooo');
     if (pageCache) return pageCache;
 
     const fileNames =  fs.existsSync(pagesDirectory) ? fs.readdirSync(pagesDirectory) : [];
@@ -41,7 +40,6 @@ export const fetchPageContent = () => {
         }
         return matterData;
       })
-      // console.log(allPagesData);
       return allPagesData;
 
 }

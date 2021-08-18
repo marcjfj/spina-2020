@@ -1,14 +1,12 @@
 import {useRouter} from 'next/router';
 import { useRef, useState } from 'react';
 export default function Form({inputs}) {
-  console.log(inputs)
   const formRef = useRef(null);
   const [formState, setFormState] = useState({...inputs.reduce((acc, input) => {
     return {...acc, [input.Label]: ""}
   }, {})});
   const [formSubmitted, setFormSubmitted] = useState(false);
   const router = useRouter();
-  console.log(router);
   const successMsg = () => {
     return formSubmitted ? (
         <div className="success-msg">

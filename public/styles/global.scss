@@ -62,6 +62,7 @@ a {
   .logo {
     position: relative;
     max-width: 515px;
+    padding: 20px;
   }
   .top-text::after {
     content: "";
@@ -182,7 +183,7 @@ a {
     height: 40px;
     background: transparent;
     border: 0;
-    margin: 0 25px;
+    margin: 0 10px 0px 10px;
     position: relative;
     display: flex;
     align-items: center;
@@ -229,6 +230,7 @@ a {
   z-index: 9;
   transition: opacity 0.3s;
   display: flex;
+  padding: 30px;
 
   &:not(.show) {
     opacity: 0;
@@ -578,5 +580,5 @@ a {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 10px;
-  margin-bottom: 50px;
+  margin: 50px 0;
 }

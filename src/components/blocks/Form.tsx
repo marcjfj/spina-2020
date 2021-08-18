@@ -36,32 +36,36 @@ export default function Form({inputs}) {
 }
   return (
     <section className="form-wrapper">
-      <form 
-        ref={formRef}
-        method="POST" 
-        data-netlify="true" 
-        name={`${router.query.page}`} 
-        action="/contact?submitted=true"
-        className="form">
-        {successMsg()}
-        {inputs.map(({Label, type}) => {
-          return (
-          <div className="input-wrapper">
-            <label className="form-label"> {Label}
-            {type === 'textarea' ? (
-              <textarea className="input" onChange={(e) => setFormState({...formState, [Label]: e.target.value})} name={Label} rows={10}></textarea>
-            ) : (
-              <input className="input" onChange={(e) => setFormState({...formState, [Label]: e.target.value})} name={Label} type={type} required/>
-            )}
-              </label>
-          </div> 
-          )
-        })}
-        <input type="hidden" name="form-name" value={`${router.query.page}`} />
-        <button onClick={(e) => handleSubmit(e)}className="send-button">
-          Send
-          </button>
-      </form>
+        <form 
+          ref={formRef}
+          method="POST" 
+          data-netlify="true" 
+          name={`${router.query.page}`} 
+          action="/contact?submitted=true"
+          className="form">
+          {successMsg()}
+          {!formSubmitted ? (
+            <div className="form-inner">
+              {inputs.map(({Label, type}) => {
+                return (
+                <div className="input-wrapper">
+                  <label className="form-label"> {Label}
+                  {type === 'textarea' ? (
+                    <textarea className="input" onChange={(e) => setFormState({...formState, [Label]: e.target.value})} name={Label} rows={10}></textarea>
+                  ) : (
+                    <input className="input" onChange={(e) => setFormState({...formState, [Label]: e.target.value})} name={Label} type={type} required/>
+                  )}
+                    </label>
+                </div> 
+                )
+              })}
+              <input type="hidden" name="form-name" value={`${router.query.page}`} />
+              <button onClick={(e) => handleSubmit(e)}className="send-button">
+                Send
+                </button>
+            </div>
+          ) : null}
+        </form>
     </section>
   )
 }

@@ -85,6 +85,9 @@ ul {
     padding: 20px 10px;
     line-height: 1.75rem;
     margin: 0 auto;
+    p {
+      line-height: 1.6;
+    }
     img {
       max-width: 100%;
     }
@@ -94,12 +97,16 @@ ul {
     a {
       color: $green;
       background: $midGreen;
+      display: inline-block;
+      padding: 3px 5px;
+      border-radius: 8px;
     }
     h3 {
       color: $green;
-      text-align: center;
+      // text-align: center;
       font-style: italic;
       font-size: 2.25rem;
+      line-height: 1.3;
       @media (max-width: 800px) {
         font-size: 1.25rem;
       }
@@ -242,6 +249,9 @@ ul {
   color: $cream;
   text-decoration: none;
   border-radius: 8px;
+  &:hover {
+    background: #B88A12;
+  }
 }
 
 .content-image {
@@ -253,6 +263,9 @@ ul {
   margin: 0 auto;
   padding: 3rem 0;
 
+  p {
+    line-height: 1.6;
+  }
   .title {
     margin-top: 0;
   }
@@ -467,6 +480,7 @@ ul {
   min-height: 200px;
   text-decoration: none;
   background: $text;
+  margin-top: 50px;
   a {
     color: $cream;
   }
@@ -485,11 +499,14 @@ ul {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 10px;
+  
 }
-
+.form-inner {
+  width: 100%;
+}
 .form-wrapper {
-  padding: 100px 20px;
+  padding: 20px 0;
 }
 
 .input {
@@ -520,6 +537,9 @@ ul {
   font-weight: 800;
   position: relative;
   margin-left: auto;
+  &:hover {
+    background: #B88A12;
+  }
 }
 
 .success-msg {

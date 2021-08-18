@@ -28,6 +28,7 @@ main {
 }
 a {
   color: $green;
+  font-weight: 700;
 }
 // hero 
 .hero, .home-hero {
@@ -261,6 +262,7 @@ a {
   color: $cream;
   text-decoration: none;
   border-radius: 8px;
+  display: inline-block;
   &:hover {
     background: #B88A12;
   }

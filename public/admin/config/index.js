@@ -45,17 +45,6 @@ const config = {
               widget: "string",
             },
             {
-              label: "Site keywords",
-              name: "site_keywords",
-              widget: "list",
-              summary: "{{fields.keyword.keyword}}",
-              field: {
-                label: "Keyword",
-                name: "keyword",
-                widget: "string",
-              },
-            },
-            {
               label: "Home Page",
               name: "homepage",
               widget: "relation",
@@ -66,13 +55,18 @@ const config = {
 
             },
             {
-              label: "Twitter account",
-              name: "twitter_account",
+              label: "Facebook account",
+              name: "facebook_account",
               widget: "string",
             },
             {
-              label: "GitHub account",
+              label: "Yelp account",
               name: "github_account",
+              widget: "string",
+            },
+            {
+              label: "Main Email",
+              name: "main_email",
               widget: "string",
             },
             {

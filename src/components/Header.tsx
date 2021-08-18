@@ -19,7 +19,7 @@ export default function Header({menuConfig}) {
     <motion.div className={`header ${scaleState ? 'scrolled' : ''}`}>
       <div className="logo">
         <Link href="/">
-          <a>
+          <a aria-label="Navigate home">
             <Logo />
           </a>
         </Link>

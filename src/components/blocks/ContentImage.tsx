@@ -10,7 +10,7 @@ export default function ContentImage({ title, image, content, layout }) {
         {parsedContent}
       </div>
       <div className="image-wrapper">
-        <Image src={image} layout="fill" objectFit="cover" className="image" />
+        <Image alt="" src={image} layout="fill" objectFit="cover" className="image" />
       </div>
     </section>
   );

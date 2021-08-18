@@ -4,7 +4,7 @@ import Logo from '../../../public/images/spina-logo.svg'
 export default function HomeHero({image, logo, topText, bottomText}) {
   return (
     <div className="home-hero"> 
-      <Image src={image} layout="fill" />
+      <Image src={image} layout="fill" alt="" />
       <div className="scrim"></div>
       <h1 className="top-text">{topText}</h1>
       <Logo className="logo" />

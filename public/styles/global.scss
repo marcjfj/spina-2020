@@ -513,6 +513,18 @@ a {
   margin: 20px;
 }
 
+.social {
+  display: flex;
+  flex-direction: row;
+}
+
+.sm-icon {
+  height: 60px;
+  width: 60px;
+  color: $cream;
+  padding: 15px;
+}
+
 .form {
   display: flex;
   align-items: center;

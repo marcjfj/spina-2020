@@ -1,3 +1,7 @@
+import Yelp from '../assets/yelp-icon.svg';
+import Facebook from '../assets/facebook-icon.svg';
+import Email from '../assets/email-icon.svg';
+
 export default function Footer({phone}) {
     return (
         <div className="footer">
@@ -5,6 +9,11 @@ export default function Footer({phone}) {
                 8820 Santa Teresa Blvd, San Jose, CA 95141
             </a>
             <div className="phone">{phone}</div>
+        <div className="social">
+            <a href="https://www.facebook.com/Spina-Farms-Pumpkin-Patch-240707662647813/"><Facebook className="facebook-icon sm-icon" /></a>
+            <a href="https://www.yelp.com/biz/spina-farms-san-jose-4"><Yelp className="yelp-icon sm-icon" /></a>
+            <a href="mailto:desl@spina-farms.com"><Email className="email-icon sm-icon"/></a>
+        </div>
         </div>
     );
 };

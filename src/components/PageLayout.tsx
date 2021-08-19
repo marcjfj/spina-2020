@@ -3,13 +3,14 @@ import Header from "./Header";
 import Head from "next/head";
 import components from "./blocks";
 
-export default function PageLayout({ slug, title, sections = [], config = {phone: ""}, menuConfig }) {
+export default function PageLayout({ slug, title, sections = [], config, menuConfig }) {
   const renderSections = () => {
     return sections.map((section, i) => {
       const Component = components[section.type];
       return <Component {...section} key={i} />;
     });
   };
+  const footerProps = {phone: config.phone, facebook: config.facebook_account, yelp: config.yelp_account, email: config.main_email};
   return (
     <div>
       <Head>
@@ -26,7 +27,7 @@ export default function PageLayout({ slug, title, sections = [], config = {phone
       </Head>
       <Header menuConfig={menuConfig} />
       <main>{renderSections()}</main>
-      <Footer phone={config.phone} />
+      <Footer {...footerProps} />
     </div>
   );
 }

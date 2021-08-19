@@ -15,13 +15,13 @@ export default function Index(props) {
   );
 }
 
-const slugToPostContent = ((postContents) => {
-  let hash = {};
-  postContents.forEach((it) => (hash[it.slug] = it));
-  return hash;
-})(fetchPageContent());
 
 export const getStaticProps: GetStaticProps = async () => {
+  const slugToPostContent = ((postContents) => {
+    let hash = {};
+    postContents.forEach((it) => (hash[it.slug] = it));
+    return hash;
+  })(fetchPageContent());
   const siteConfig = JSON.parse(fs.readFileSync('config.json', 'utf8'));
   const homePage = siteConfig.homepage;
   const pageSource = fs.readFileSync(slugToPostContent[homePage].fullPath, "utf8");

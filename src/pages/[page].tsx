@@ -15,11 +15,6 @@ const Page = (props) => {
   );
 };
 
-const slugToPostContent = ((postContents) => {
-  let hash = {};
-  postContents.forEach((it) => (hash[it.slug] = it));
-  return hash;
-})(fetchPageContent());
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = fetchPageContent().map((it) => "/" + it.slug);
@@ -30,6 +25,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slugToPostContent = ((postContents) => {
+    let hash = {};
+    postContents.forEach((it) => (hash[it.slug] = it));
+    return hash;
+  })(fetchPageContent());
 
   // page data
   const slug = params.page as string;

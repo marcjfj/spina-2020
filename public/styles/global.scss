@@ -253,6 +253,9 @@ a {
     font-style: italic;
     font-weight: 800;
     margin-bottom: 25px;
+    @media(max-width: 800px) {
+          font-size: 1.25rem;
+      }
   }
 }
 

@@ -15,7 +15,7 @@ export default {
       label: "Slug",
       name: "slug",
       widget: "string",
-      pattern: ['\/([-_]*[a-zA-Z0-9]+([-_]*[a-zA-Z0-9]+)*)\/gm', "Slug must be lowercase with no special characters other than - and _"],
+      hint: "Slug must be lowercase with no special characters other than - and _",
     },
     {
       label: "Title",

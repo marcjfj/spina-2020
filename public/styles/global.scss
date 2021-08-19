@@ -69,6 +69,7 @@ a {
     position: relative;
     max-width: 515px;
     padding: 20px;
+    width: calc(100% - 40px); 
   }
   .top-text::after {
     content: "";

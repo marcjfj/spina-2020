@@ -10,9 +10,9 @@ export default function Footer({phone, facebook, yelp, email}) {
             </a>
             <div className="phone">{phone}</div>
         <div className="social">
-            <a href={facebook}><Facebook className="facebook-icon sm-icon" /></a>
-            <a href={yelp}><Yelp className="yelp-icon sm-icon" /></a>
-            <a href={`mailto:${email}`}><Email className="email-icon sm-icon"/></a>
+            <a href={facebook} aria-label="facebook"><Facebook className="facebook-icon sm-icon" /></a>
+            <a href={yelp} aria-label="yelp"><Yelp className="yelp-icon sm-icon" /></a>
+            <a href={`mailto:${email}`} aria-label="email"><Email className="email-icon sm-icon"/></a>
         </div>
         </div>
     );

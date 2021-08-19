@@ -61,7 +61,7 @@ const config = {
             },
             {
               label: "Yelp account",
-              name: "github_account",
+              name: "yelp_account",
               widget: "string",
             },
             {

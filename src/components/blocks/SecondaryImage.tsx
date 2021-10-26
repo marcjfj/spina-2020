@@ -9,7 +9,7 @@ export default function SecondaryImage({ bullets, image }) {
       <div className="bullets">
         <ul className="bullet-list">
           {bullets.map((i) => (
-            <li>
+            <li key={i}>
               <Pumpkin className="pumpkinIcon" />
               <span>{i}</span>
             </li>

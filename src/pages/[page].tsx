@@ -3,9 +3,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import matter from "gray-matter";
 import { fetchPageContent } from "../lib/pages";
 import fs from "fs";
-
 import PageLayout from "../components/PageLayout";
-
 
 const Page = (props) => {
   return (

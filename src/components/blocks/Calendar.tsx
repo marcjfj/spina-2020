@@ -8,7 +8,7 @@ export default function Calendar({ days }) {
           {days.map((i, index) => {
             const splitDate = i.Date.split(' ');
             return (
-            <li className="date">
+            <li className="date" key={i.Date}>
               {index < 7 ? (
                 <span className="day-label">{splitDate[0].slice(0, -1)}</span>
               ) : null}
